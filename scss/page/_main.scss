@@ -1,0 +1,201 @@
+@import '../layout/media-queries';
+.main {
+    background: url('/images/bg-pattern-desktop.svg');
+    @include minWidthandMinHeight(1024px, 1366px) {
+        background: none;
+    }
+    &__content {
+        display: flex;
+        // height: 100vh;
+  
+        .left {
+            padding:2rem;
+            flex:1;          
+            .logo { 
+               padding:1rem;
+               @include minWidthandMinHeight(1024px, 1366px) {
+                width:300px;
+              }
+              @include maxWidth(500px) {
+                width: 150px;
+            }
+            }
+            .hero-wrapper {
+                @include maxWidth(768px) {
+                    display:block;
+                }
+                @include minWidthandMinHeight(1024px, 1366px) {
+                    display: block;
+                    height: auto;
+                    
+                }
+                display: none;
+                // width:100vw;
+                // height: 100vh;
+                img {
+                    width: 100%;
+                }
+             
+            }
+            .text {
+
+                display: flex;
+                flex-direction: column;
+                justify-content:center;
+                height: 100vh;
+                max-width: 75%;
+                
+                @include maxWidth(768px) {
+                    justify-content: center;
+                    text-align: center;
+                    margin: auto;
+                    padding: 2rem 0;
+                    // align-items: center;
+                    height: auto;
+                }
+                @include minWidthandMinHeight(1024px, 1366px) {
+                    margin: auto;
+                    justify-content: center;
+                    padding: 2rem 0;
+                    text-align: center;
+                    height: auto;
+
+                }
+                .title {
+                    font-size:3rem;
+                    letter-spacing:1rem;
+                    color: hsl(0, 6%, 24%);
+                    @include minWidthandMinHeight(1024px, 1366px) {
+                        font-size:5rem;
+                        
+                    }
+                    @include maxWidth(500px) {
+                        font-size: 2rem;
+                    }
+                    @include maxWidth(300px) {
+                        font-size: 1.5rem;
+                    }
+                    span {
+                        font-weight: 300;
+                        color:hsl(0, 36%, 70%);
+                    }
+                }
+                p {
+                    margin: 1rem 0;
+                    color:hsl(0, 36%, 70%);
+                    @include minWidthandMinHeight(1024px, 1366px) {
+                        font-size:2.25rem;
+    
+                    }
+                    @include maxWidth(300px) {
+                        font-size: .75rem;
+                    }
+                }   
+            }
+            #form {
+                .input--container {
+                    min-width: 100%;
+                    position: relative;
+                    display: flex;
+                    border: 1px solid hsl(0, 36%, 70%);
+                    border-radius: 50px;
+                    align-items: center;
+                    justify-content:center;
+               
+                    .error-icon{
+                        // margin-right: 10rem;
+                        position: absolute;
+                        display: none;
+                        @include maxWidth(500px) {
+                            
+                            right:60px;
+                        }
+                        img {
+                            @include maxWidth(500px) {
+                                width: 15px;
+
+                            }
+                        }
+                        &.active {
+                            display: block;
+                        }
+                   
+                           
+                    }
+                    &.active {
+                        border-color:hsl(0, 93%, 68%);
+                    }
+                    input {
+                        width: 100%;
+                        padding:1rem 1.5rem;
+                        outline: none;
+                        border: none;
+                        border-radius: 50px;
+                        background: none;
+                        @include minWidthandMinHeight(1024px, 1366px) {
+                            padding: 2rem 3rem;
+                            font-size:1.5rem;
+                            
+                        }
+                        @include maxWidth(300px) {
+                            font-size: .65rem;
+                            padding: .5rem 1rem;
+                            
+                        }
+
+                        &::placeholder {
+                            color:hsl(0, 36%, 70%);
+                        }
+                        
+                  
+                    }
+                    button {
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        width:100px;
+                        height: 100%;
+                        border-radius: 50px;
+                        background:linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+                        outline: none;
+                        border:none;
+                        
+                        cursor: pointer;
+                        @include maxWidth(500px) {
+                            width:50px;
+                            
+                        }
+                        // @include maxWidth(300px) {
+                        //     width: 25px;
+                            
+                        // }
+                        &:active {
+                         
+                            transform: scale(1.05);
+                            box-shadow: 0px 13px 20px -5px rgba(249,98,98,0.28);
+                        }
+                      
+                  
+                    }
+                }
+                .msg {
+                    text-align:start;
+                    color:hsl(0, 93%, 68%);
+                    
+                    
+                }
+            }
+        }
+        .right {
+            @include maxWidth(768px) {
+                display:none;
+            }
+        
+            @include minWidthandMinHeight(1024px, 1366px) {
+                display: none;
+            }
+        }
+   
+    }
+}
+
